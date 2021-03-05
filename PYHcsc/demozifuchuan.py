@@ -4,9 +4,16 @@
 #@File : demozifuchuan.py
 #@Software : PyCharm
 #字符串的定义
-a='p'
-b="p"
-c='''p'''
-print(a,id(a))
-print(b,id(b))
-print(c,id(c))
+# a='p'
+# b="p"
+# c='''p'''
+# print(a,id(a))
+# print(b,id(b))
+# print(c,id(c))
+
+#字符串的查询
+s='hello,hello'
+print(s.index('lo'))
+print(s.find('lo'))
+print(s.rindex('lo'))
+print(s.rfind('lo'))
