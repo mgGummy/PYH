@@ -83,3 +83,8 @@ print('|'.join(ls))
 print('*'.join('cscnb'))
 
 #字符串的比较操作
+print('apple'>'app')
+print('apple'>'banana')
+#函数ord可以获得原始值,ord函数对应chr函数
+print(ord('a'),ord('b'))
+print(chr(97))
