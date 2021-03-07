@@ -71,20 +71,39 @@
 # print('abcd'.isalnum())
 # print('abcd张三123'.isalnum())
 
-#字符串的替换和合并
-s='hello wdnmd'
-print(s.replace('hello','你好'))
-s1='hello,python,python,python'
-print(s1.replace('python','java',2))
-lst=['hello','python','java']
-print('|'.join(lst))
-ls=('hello','wdnmd')
-print('|'.join(ls))
-print('*'.join('cscnb'))
+# #字符串的替换和合并
+# s='hello wdnmd'
+# print(s.replace('hello','你好'))
+# s1='hello,python,python,python'
+# print(s1.replace('python','java',2))
+# lst=['hello','python','java']
+# print('|'.join(lst))
+# ls=('hello','wdnmd')
+# print('|'.join(ls))
+# print('*'.join('cscnb'))
+#
+# #字符串的比较操作
+# print('apple'>'app')
+# print('apple'>'banana')
+# #函数ord可以获得原始值,ord函数对应chr函数
+# print(ord('a'),ord('b'))
+# print(chr(97))
 
-#字符串的比较操作
-print('apple'>'app')
-print('apple'>'banana')
-#函数ord可以获得原始值,ord函数对应chr函数
-print(ord('a'),ord('b'))
-print(chr(97))
+# #字符串的切片操作\
+# #切片[start:end:step]
+# s='hello wdnmd'
+# s1=s[:5]
+# print(s1)
+# s2=s[6:]
+# print(s2)
+# s3='!'
+# n=s1+s3+s2
+# print(n)
+
+#格式化字符串
+# %占位符
+name='张三'
+age=20
+#print('我叫%s,今年%d岁'%(name,age))
+#使用{}
+print('我叫{0},今年{1}岁'.format(name,age))
