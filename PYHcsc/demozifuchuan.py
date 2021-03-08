@@ -102,8 +102,22 @@
 
 #格式化字符串
 # %占位符
-name='张三'
-age=20
-#print('我叫%s,今年%d岁'%(name,age))
-#使用{}
-print('我叫{0},今年{1}岁'.format(name,age))
+# name='张三'
+# age=20
+# print('我叫%s,今年%d岁'%(name,age))
+# #使用{}
+# print('我叫{0},今年{1}岁'.format(name,age))
+# #s-string
+# print(f'我叫{name},今年{age}岁')
+
+print('{0:.3}'.format(3.1415926))#.3表示一共是三位数
+print('{0:.3f}'.format(3.1415926))#.3表示一共是三位小数
+print('{0:10.3f}'.format(3.1415926))#10是宽度
+
+s='我是大聪明'
+print(s.encode(encoding='GBK'))
+print(s.encode(encoding='UTF-8'))
+byte=s.encode(encoding='GBK')
+print(byte.decode(encoding='GBK'))
+byte=s.encode(encoding='UTF-8')
+print(byte.decode(encoding='UTF-8'))
