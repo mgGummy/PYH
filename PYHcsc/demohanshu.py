@@ -78,10 +78,23 @@
 # print(age)
 
 #递归
-def fac(n):
+# def fac(n):
+#     if n==1:
+#         return 1
+#     else:
+#         return n*fac(n-1)
+#
+# print(fac(6))
+
+#斐波那契数列
+def fib(n):
     if n==1:
         return 1
+    elif n==2:
+        return 1
     else:
-        return n*fac(n-1)
+        return fib(n-1)+fib(n-2)
 
-print(fac(6))
+
+for i in range(1,7):
+    print(fib(i))
