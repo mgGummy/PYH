@@ -84,3 +84,58 @@ stu.show()
 #print(stu.__age)  加了__无法在类的外部使用
 #print(dir(stu))
 print(stu._Student__age)#在外部还是可以靠这种方法访问
+
+#继承
+# class Person():
+#     def __init__(self,name,age):
+#         self.name=name
+#         self.age=age
+#     def info(self):
+#         print(self.name,self.age)
+#
+# class Student(Person):
+#     def __init__(self,name,age,xuehao):
+#         super().__init__(name,age)
+#         self.xuehao=xuehao
+#
+# class Teacher(Person):
+#     def __init__(self,name,age,jiaonian):
+#         super().__init__(name,age)
+#         self.jiaonian=jiaonian
+
+#多继承
+class A(object):
+    pass
+class B():
+    pass
+class C(A,B):
+    pass
+
+
+#方法重写
+class Person():
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+    def info(self):
+        print(self.name,self.age)
+
+class Student(Person):
+    def __init__(self,name,age,xuehao):
+        super().__init__(name,age)
+        self.xuehao=xuehao
+    def info(self):
+        super().info()
+        print(self.xuehao)
+
+
+class Teacher(Person):
+    def __init__(self,name,age,jiaonian):
+        super().__init__(name,age)
+        self.jiaonian=jiaonian
+    def info(self):
+        super().info()
+        print(self.jiaonian)
+
+stu=Student('张三',20,'1101')
+stu.info()
