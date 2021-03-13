@@ -202,19 +202,20 @@
 # print(s)
 
 
-#__new__与__init_
-class Person():
-    def __new__(cls, *args, **kwargs):
-        print('__new__被调用,cls的id值为{0}'.format(id(cls)))
-        obj=super().__new__(cls)
-        print('创建对象的id为:{0}'.format(id(obj)))
-        return obj
-    def __init__(self,name,age):
-        print('__init__被调用self的id值为{0}'.format(id(self)))
-        self.name=name
-        self.age=age
-print("object这个类的对象id为{0}".format(id(object)))
-print('Person这个类的对象id为{0}'.format(id(Person)))
+# #__new__与__init_
+# class Person():
+#     def __new__(cls, *args, **kwargs):
+#         print('__new__被调用,cls的id值为{0}'.format(id(cls)))
+#         obj=super().__new__(cls)
+#         print('创建对象的id为:{0}'.format(id(obj)))
+#         return obj
+#     def __init__(self,name,age):
+#         print('__init__被调用self的id值为{0}'.format(id(self)))
+#         self.name=name
+#         self.age=age
+# print("object这个类的对象id为{0}".format(id(object)))
+# print('Person这个类的对象id为{0}'.format(id(Person)))
+#
+# p1=Person('张三',20)
+# print('p1这个实例对象id{0}'.format(id(p1)))
 
-p1=Person('张三',20)
-print('p1这个实例对象id{0}'.format(id(p1)))
