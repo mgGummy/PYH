@@ -3,3 +3,5 @@
 #@Author : cscnb
 #@File : demomokuai.py
 #@Software : PyCharm
+import calc
+print(calc.add(100,200))
