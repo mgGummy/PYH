@@ -15,4 +15,4 @@
 # file.write('hello csc')
 # file.close()
 
-sur_file=
+sur_file=open()
