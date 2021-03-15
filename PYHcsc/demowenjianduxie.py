@@ -11,6 +11,8 @@
 # file.write('hello csc')
 # file.close()
 
-file=open('b.txt','w')
-file.write('hello csc')
-file.close()
+# file=open('b.txt','a')
+# file.write('hello csc')
+# file.close()
+
+sur_file=
