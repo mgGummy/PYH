@@ -15,4 +15,8 @@
 # file.write('hello csc')
 # file.close()
 
-sur_file=open()
+# sur_file=open('logo.png','rb')
+# target_flie=open('copylogo.png','wb')
+# target_flie.write(sur_file.read())
+# target_flie.close()
+# sur_file.close()
