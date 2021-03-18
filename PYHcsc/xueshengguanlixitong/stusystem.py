@@ -45,6 +45,22 @@ def menm():
     print('\t\t\t\t\t\t0.退出')
 
 def insert():
+    student_list=[]
+    while True:
+        id=input('请输入ID（如1001）：')
+        if not id:
+            break
+        name=input('请输入姓名：')
+        if not name:
+            break
+
+        try:
+            englist = int(input())
+            englist = int(input())
+            englist = int(input())
+        except:
+    pass
+def save():
     pass
 def search():
     pass
