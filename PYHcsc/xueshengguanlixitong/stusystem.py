@@ -55,17 +55,35 @@ def insert():
             break
 
         try:
-            englist = int(input())
-            englist = int(input())
-            englist = int(input())
+            englist = int(input('请输入英语成绩：'))
+            python = int(input('请输入python成绩：'))
+            java= int(input('请输入java成绩：'))
         except:
-    pass
+            print('输入无效，请重新输入')
+            continue
+        #把学生信息保存到字典
+        student={'id':id,'name':name,'enlish':englist,'python':python,'java':java}
+        #把学生信息添加到列表中
+        student_list.append(student)
+        answer=input('是否要继续添加？y/n\n')
+        if answer=='y':
+            continue
+        else:
+            break
+    #调用save函数
+    save(student_list)
+    print('学生信息录入完毕')
+
 def save():
-    pass
+   pass
+
+
 def search():
     pass
+
 def delete():
     pass
+
 def modify():
     pass
 def sort():
