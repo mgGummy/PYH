@@ -110,15 +110,15 @@ def delete():
                         print(f'id为{student_id}的学生信息已被删除')
                     else:
                         print(f'没有找到id为{student_id}的学生信息')
-            else:
-                print('无学生学习')
-                break
-            show() #删完显示所有学生信息
-            answer=input('是否继续删除学生信息y是确定')
-            if answer=='y':
-                continue
-            else:
-                break
+        else:
+            print('无学生信息')
+            break
+        show() #删完显示所有学生信息
+        answer=input('是否继续删除学生信息y是确定')
+        if answer=='y':
+            continue
+        else:
+            break
 
 def modify():
     pass
