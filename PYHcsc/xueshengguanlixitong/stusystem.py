@@ -3,6 +3,8 @@
 #@Author : cscnb
 #@File : stusystem.py
 #@Software : PyCharm
+import os
+filename='student.txt'
 def main():
     while True:
         menm()
@@ -29,8 +31,6 @@ def main():
                 total()
             elif choice==7:
                 show()
-
-
 
 def menm():
     print('====================学生管理系统====================')
@@ -74,15 +74,51 @@ def insert():
     save(student_list)
     print('学生信息录入完毕')
 
-def save():
-   pass
+def save(lst):
+   try:
+       stu_txt=open(filename,'a',encoding='utf-8')
+   except:
+       stu_txt=open(filename,'w',encoding='utf-8')
 
+   for item in lst:
+        stu_txt.write(str(item)+'\n')
+   stu_txt.close()
 
 def search():
     pass
 
 def delete():
-    pass
+    while True:
+        student_id=input('请输入要删除的学生id：')
+        if student_id!='':
+            if os.path.exists(filename):#判断文件是否存在
+                with open(filename,'r',encoding='utf-8') as file:
+                    student_old=file.realines()
+            else:
+                student_old=[]
+            flag=False #标记是否删除
+            if student_old:
+                with open(filename,'w',encoding='utf-8') as wfile:
+                    d={}
+                    for item in student_old:
+                        d=dict(eval(item))#字符串转化成字典
+                        if d['id']!=student_id:
+                            wfile.write(str(d)+'\n')
+                        else:
+                            flag=True
+                    if flag:
+                        print(f'id为{student_id}的学生信息已被删除')
+                    else:
+                        print(f'没有找到id为{student_id}的学生信息')
+            else:
+                print('无学生学习')
+                break
+            show() #删完显示所有学生信息
+            answer=input('是否继续删除学生信息y是确定')
+            if answer=='y':
+                continue
+            else:
+                break
 
 def modify():
     pass
