@@ -85,8 +85,58 @@ def save(lst):
    stu_txt.close()
 
 def search():
-    pass
+    student_query=[]
+    while True:
+        id=''
+        name=''
+        if os.path.exists(filename):
+            mode=input('按id查输入1，按姓名查输入2:')
+            if mode=='1':
+                id=input('请输入学生id')
+            elif:
+                name = input('请输入学生姓名')
+            else:
+                print('你的输入有误，请重新输入')
+                search()
+            with open(filename,'r',encoding='utf-8') as rfile:
+                student=rfile.readlines()
+                for item in student:
+                    d=dict(eval(item))
+                    if id!='':
+                        if d['id']==id:
+                            student_query.append(d)
+                    elif name!='':
+                        if d['name']==name:
+                            student_query.append(d)
+            #显示查询结果
+            show_student(student_query)
+            #清空列表
+            student_query.clear()
+            anwer=input('是否要继续查询y/n\n')
+            if anwer=='y':
+                continue
+            else:
+                break
 
+        else:
+            print('暂未保存学生信息')
+            return
+def show_student(lst):
+    if len(lst)==0:
+        print('没查询到信息，无数据显示')
+        return
+    format_title='{:^6}\t{:^12}\t{:^8}\t{:^10}\t{:^10}\t{:^8}'
+    print(format_title.format('ID','姓名','英语成绩','python成绩','java成绩','总成绩'))
+    #定义内容的显示格式
+    format_data='{:^6}\t{:^12}\t{:^8}\t{:^8}\t{:^8}\t{:^8}'
+    for item in lst:
+        print(format_data.format(item.get('id'),
+                                 item.get('name'),
+                                 item.get('english'),
+                                 item.get('python'),
+                                 item.get('java'),
+                                 int(item.get('english'))+int(item.get('python'))+int(item.get('java'))
+                                 ))
 def delete():
     while True:
         student_id=input('请输入要删除的学生id：')
@@ -110,18 +160,47 @@ def delete():
                         print(f'id为{student_id}的学生信息已被删除')
                     else:
                         print(f'没有找到id为{student_id}的学生信息')
-        else:
-            print('无学生信息')
-            break
-        show() #删完显示所有学生信息
-        answer=input('是否继续删除学生信息y是确定')
-        if answer=='y':
-            continue
-        else:
-            break
+            else:
+                print('无学生信息')
+                break
+            show() #删完显示所有学生信息
+            answer=input('是否继续删除学生信息y是确定')
+            if answer=='y':
+                continue
+            else:
+                break
 
 def modify():
-    pass
+    show()
+    if os.path.exists(filename):
+        with open(filename,'r',encoding='utf-8') as rfile:
+            student_old=rfile.readlines()
+    else:
+        return
+    student_id=input('请输入要修改的学生id')
+    with open(filename,'w',encoding='utf-8') as wfile:
+        for item in student_old:
+            d=dict(eval(item))
+            if d['id']==student_id:
+                print('找到学生信息，可以修改信息了')
+                while True:
+                    try:
+                        d['name'] = input('请输入姓名')
+                        d['enlish'] = input('请输入英语成绩')
+                        d['python'] = input('请输入python成绩')
+                        d['java'] = input('请输入java成绩')
+                    except:
+                        print('输入错误，请重新输入')
+                    else:
+                        break
+                wfile.write(str(d)+'\n')
+                print('修改成功')
+            else:
+                wfile.write(str(d)+'\n')
+        answer=input('是否继续修改学生信息?y/n\n')
+        if answer=='y':
+            modify()
+
 def sort():
     pass
 def total():
