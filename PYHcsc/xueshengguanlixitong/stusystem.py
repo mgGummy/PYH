@@ -93,7 +93,7 @@ def search():
             mode=input('按id查输入1，按姓名查输入2:')
             if mode=='1':
                 id=input('请输入学生id')
-            elif:
+            elif mode=='2':
                 name = input('请输入学生姓名')
             else:
                 print('你的输入有误，请重新输入')
@@ -121,6 +121,7 @@ def search():
         else:
             print('暂未保存学生信息')
             return
+
 def show_student(lst):
     if len(lst)==0:
         print('没查询到信息，无数据显示')
@@ -128,15 +129,16 @@ def show_student(lst):
     format_title='{:^6}\t{:^12}\t{:^8}\t{:^10}\t{:^10}\t{:^8}'
     print(format_title.format('ID','姓名','英语成绩','python成绩','java成绩','总成绩'))
     #定义内容的显示格式
-    format_data='{:^6}\t{:^12}\t{:^8}\t{:^8}\t{:^8}\t{:^8}'
+    format_data='{:^6}\t{:^12}\t{:^8}\t{:^12}\t{:^10}\t{:^18}'
     for item in lst:
         print(format_data.format(item.get('id'),
                                  item.get('name'),
-                                 item.get('english'),
+                                 item.get('enlish'),
                                  item.get('python'),
                                  item.get('java'),
-                                 int(item.get('english'))+int(item.get('python'))+int(item.get('java'))
+                                 int(item.get('enlish'))+int(item.get('python'))+int(item.get('java'))
                                  ))
+
 def delete():
     while True:
         student_id=input('请输入要删除的学生id：')
