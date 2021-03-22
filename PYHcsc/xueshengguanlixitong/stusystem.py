@@ -92,8 +92,8 @@ def delete():
         student_id=input('请输入要删除的学生id：')
         if student_id!='':
             if os.path.exists(filename):#判断文件是否存在
-                with open(filename,'r',encoding='utf-8') as file:
-                    student_old=file.realines()
+                with open(filename,'r',encoding='utf-8')as file:
+                    student_old=file.readlines()
             else:
                 student_old=[]
             flag=False #标记是否删除
