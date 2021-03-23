@@ -206,7 +206,15 @@ def modify():
 def sort():
     pass
 def total():
-    pass
+    if os.path.exists(filename):
+        with open(filename,'r',encoding='utf-8') as rfile:
+            students=rfile.readlines()
+            if students:
+                print(f'一共有{len(students)}名学生')
+            else:
+                print('未录入学生信息')
+    else:
+        print('暂未保存信息')
 def show():
     pass
 
