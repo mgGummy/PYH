@@ -3,6 +3,8 @@
 #@Author : cscnb
 #@File : text2.py
 #@Software : PyCharm
+
+#豆瓣戏剧排名
 import requests
 if __name__ == '__main__':
     url = 'https://movie.douban.com/j/chart/top_list'
