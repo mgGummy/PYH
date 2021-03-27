@@ -3,6 +3,8 @@
 #@Author : cscnb
 #@File : text1.py
 #@Software : PyCharm
+
+#百度翻译
 import requests
 if __name__ == '__main__':
     post_url='https://fanyi.baidu.com/sug'
