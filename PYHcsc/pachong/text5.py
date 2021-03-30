@@ -15,6 +15,7 @@ if __name__ == '__main__':
     for yema in range(1,2):
         new_url=format(url%yema)
         pa_text=requests.get(url=new_url,headers=headers).text
-        ex='<img src="(.*?)" alt=".*?" class="illustration" width="100%" height="auto">'
+        ex='<div class="thumb">\n\n<a href=".*?" target="_blank">\n<img src="(.*?)" alt=".*?" class="illustration" width="100%" height="auto">\n</a>\n</div>'
         tupian = re.findall(ex,pa_text,re.S)
         print(tupian)
+        
