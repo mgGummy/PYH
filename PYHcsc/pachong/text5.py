@@ -3,7 +3,6 @@
 #@Author : cscnb
 #@File : text5.py
 #@Software : PyCharm
-
 #糗事百科
 import requests
 import re
