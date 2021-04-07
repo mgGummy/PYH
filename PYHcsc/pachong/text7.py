@@ -15,4 +15,5 @@ fangkuang = tree.xpath("/html/body/div[6]/div/div/div[2]/div[6]/div[1]/div")
 for gebufen in fangkuang:
     jiage = gebufen.xpath("./div/div[2]/div[2]/i/text()")
     mingchen = 'saas'.join(gebufen.xpath("./div/div[2]/div[3]/a/text()"))
-    
+    didian = gebufen.xpath("./div/div[1]/div[2]/section[1]/div/span/text()")
+    print(didian)
