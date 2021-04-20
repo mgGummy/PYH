@@ -27,7 +27,7 @@ async def aiodown(url):
 async def main():
     tasks = []
     for url in urls:
-        tasks.append(aiodown(url))
+        tasks.append(asyncio.create_task(aiodown(url)))
 
     await asyncio.wait(tasks)
 
